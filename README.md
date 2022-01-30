@@ -1,2 +1,2 @@
-# MPS
+# MCAP
 Cypress cucumber
