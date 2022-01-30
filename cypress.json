@@ -1,0 +1,9 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "defaultCommandTimeout": 6000,
+    "env": {
+      "url": "https://www.ppcalculators.com"
+           },
+    
+    "testFiles": "**/*.feature"  
+}

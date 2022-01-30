@@ -1,0 +1,29 @@
+{
+  "name": "mcap_cypress_cucumber",
+  "version": "1.0.0",
+  "description": "Cypress cucumber with report",
+  "main": "index.js",
+  "scripts": {
+    "clean:reports": "if exist cypress\\reports rmdir /S/Q cypress\\reports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run --browser chrome",
+    "posttest": "node cucumber-html-report.js",
+    "test": "npm run pretest && npm run scripts && npm run posttest|| npm run posttest"
+  },
+  "author": "uma",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "devDependencies": {
+    "cypress": "^9.2.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.18.3"
+  }
+}
